@@ -1,0 +1,23 @@
+
+.annonce{
+	border: 1px black solid;
+	margin-bottom: 12px;
+	text-align: justify;
+}
+
+.search
+{
+	margin-top:70px;
+	margin-left: 480px;
+}
+
+.pagination{
+	margin-left: 150px;
+}
+
+footer{
+	background-color:#007bff;
+	text-align: center;
+	height: 100px;
+}
+

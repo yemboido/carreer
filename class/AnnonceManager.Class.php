@@ -69,6 +69,12 @@ class AnnonceManager
 	}
 	
 
-	
+	public function rechercherAnnonce()
+	{		$typeContrat=$_POST["typeContrat"];
+			$recherche=$_POST["recherche"];
+			$q = $this->db->query('SELECT * FROM annonce WHERE typeContrat ='.$typeContrat.' && recherche ='.$recherche);
+			$donnees = $q->fetch(PDO::FETCH_ASSOC);
+			return new Annonce($donnees);
+	}
 
 }
