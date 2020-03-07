@@ -1,7 +1,7 @@
 <?php 
-
+	require_once "includes/nav.php";
 	require_once "config.php";
-    $manager=new AnnonceManager($bd);
+    $manager=new EntrepriseManager($bd);
             $annonceTable =$manager->listerAnnonce(); 
 
               if (empty($annonceTable))
@@ -12,26 +12,62 @@
               {
 
 ?>
+<link rel="stylesheet" type="text/css" href="static/css/entrepriseZone_css.css">
+<div class="row">
+	<div class="col-lg-12 banner"> Banner Poster une annonce / Consulter CV</div>
+</div>
+	<div class="row">
 
-	<table>
-	<?php foreach ($annonceTable as $annonce)
-              { ?>
-		<tr> 
-			
-				<a href="gererAnnonce.php?id=<?php echo $annonce->getId(); ?>"> 
-						
-						<div>
-							<?php echo $annonce->getTitre(); ?>
-							<?php echo $annonce->getDescription(); ?>
-							<?php echo $annonce->getDomaineActivite(); ?>
-							<?php echo $annonce->getTypeContrat(); ?>
-							<?php echo $annonce->getLieux(); ?>
-							<?php echo $annonce->getDatePublication(); ?>
-						</div>
-				
-				</a>	
-		</tr>
+				<section class="col-lg-8">
+					<p>Vos annonces faites:</p>
+					<?php foreach ($annonceTable as $annonce)
+	              { ?>
 
-		<?php }}?>
+							<div class=" annonce col-lg-8">
 
-	</table>
+								<div class="row">
+									<div class="col-lg-10">
+										<a href="voirPlus.php?id=<?php echo $annonce->getId(); ?>"><?php echo $annonce->getTitre(); ?></a>
+									</div>	
+								</div>
+
+								<div class="row">
+									<div class="col-lg-10">
+										<?php echo $annonce->getDescription(); ?>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-lg-10">
+										<?php echo $annonce->getDescription(); ?>
+									</div>
+								</div>
+
+
+								<div class="row">
+									<div class="col-lg-3">
+										<?php echo $annonce->getDomaineActivite(); ?>
+									</div>
+
+									<div class="col-lg-3">
+										<?php echo $annonce->getTypeContrat(); ?>
+									</div>
+									<div class="col-lg-3">
+										<?php echo $annonce->getLieux(); ?>
+									</div>
+
+									<div class="col-lg-offset-6  col-lg-2"><?php echo $annonce->getDatePublication(); ?></div>
+								</div>							
+								
+								
+							</div>
+							
+					<?php }}?>		
+				</section>
+
+				<div class="col-lg-4 info">
+						<p>Presentation de la structure</p>
+						<img src="" alt="entreprise logo">
+						<p>llll</p>
+				</div>
+	</div>

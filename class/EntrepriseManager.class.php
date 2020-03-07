@@ -1,11 +1,9 @@
 <?php
-
 /**
  * 
  */
-class AnnonceManager 
-{
-	
+class EntrepriseManager {
+
 private $db;
 
 	public function __construct($db)
@@ -33,7 +31,7 @@ private $db;
 	public function listerAnnonce()
 	{
 		$annonce = array();
-		$q = $this->db->query('SELECT * FROM annonce ORDER BY id DESC');
+		$q = $this->db->query('SELECT * FROM annonce WHERE id =1');
 		while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
 			$annonce[] = new Annonce($donnees);
@@ -76,5 +74,4 @@ private $db;
 			$donnees = $q->fetch(PDO::FETCH_ASSOC);
 			return new Annonce($donnees);
 	}
-
 }

@@ -22,22 +22,23 @@ $manager=new AnnonceManager($bd);
 
 			<div class="row">
 				<div class="col-lg-12">
+					
+						<div class="col-lg-2"></div>
 					<form class="row search" action="index.php" method="POST">
-						
-						<div class="col-2"></div>
-					<div class="input-group col-lg-offset-2 col-lg-6">
+
+					<div class="input-group col-lg-offset-2 col-lg-8">
 						
 						<input name="recherche" type="search" class="form-control input-lg" placeholder="Recherchez ici :)" >
 						
-					<!--	<select class="form-control" name="typeContrat">
+						<select class="form-control" name="typeContrat">
 									<option value="CDD">CDD</option>
 									<option value="CDI">CDI</option>
 									<option value="Stage">Stage</option>
 									<option value="Alternance">Alternance</option>
-									<option value="*" default>Toutes Annonce</option>
-						</select>-->
+									<option value="*" selected>Toutes Annonce</option>
+						</select>
 						<span class="input-group-btn">
-						<button class="btn btn-primary" type="submit" name="rechercher">Valider</button>
+						<button class="btn-primary " type="submit" name="rechercher">Valider</button>
 						</span>
 					</div>
 					</form>
@@ -97,7 +98,7 @@ $manager=new AnnonceManager($bd);
 				</section>
 			</div>
 
-			<div class="row col-lg-12">
+	<!--		<div class="row col-lg-12">
 				<div class="col-lg-2"></div>
 				<div class="col-lg-offset-2 col-lg-4">
 					<nav aria-label="Page navigation ">
@@ -120,18 +121,20 @@ $manager=new AnnonceManager($bd);
 				  </ul>
 			</nav>
 		</div>
-			</div>
+			</div> -->
 
-			<footer class="row">
-				@2020
-			</footer>
+			
 
 		</div>
 
-
+<footer class="row">
+				@2020
+			</footer>
 <?php
 	if (isset($_POST["rechercher"])) {
 		
 		
 		$annonceTable=$manager->rechercherAnnonce();
-	}
+	} ?>
+
+	
